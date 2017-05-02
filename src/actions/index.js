@@ -39,15 +39,7 @@ export function createPost(post, history) {
     // can now dispatch stuff
     const fields = post;
     console.log(fields);
-    // axios({
-    //   method: 'post',
-    //   url: `${ROOT_URL}/posts/${API_KEY}`,
-    //   data: {
-    //     title: 'wit',
-    //     content: 'asdf',
-    //     tags: 'asd',
-    //   },
-    // }).then(response => console.log(response));
+
     axios.post(`${ROOT_URL}/posts${API_KEY}`, fields).then((response) => {
       console.log('here');
       console.log(response);
@@ -64,7 +56,24 @@ export function createPost(post, history) {
   };
 }
 
-export function updatePost(post) { /* axios put */ }
+export function updatePost(id, post) {
+  // ActionCreator returns a function
+  // that gets called with dispatch
+  return (dispatch) => {
+    // here is where you would do your asynch axios calls
+    // on the completion of which you would dispatch some new action!
+    // can now dispatch stuff
+    axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post).then((response) => {
+      dispatch({
+        type: 'CREATE_POST',
+        payload: response,
+      });
+      console.log(response);
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
+}
 
 export function fetchPost(id) {
   // ActionCreator returns a function
@@ -85,4 +94,17 @@ export function fetchPost(id) {
   };
 }
 
-export function deletePost(id, history) { /* axios delete */ }
+export function deletePost(id, history) {  // ActionCreator returns a function
+  // that gets called with dispatch
+  return (dispatch) => {
+    // here is where you would do your asynch axios calls
+    // on the completion of which you would dispatch some new action!
+    // can now dispatch stuff
+    axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`).then((response) => {
+      history.push('/');
+      console.log(response);
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
+}
