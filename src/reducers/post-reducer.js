@@ -13,11 +13,11 @@ const PostReducer = (state = initialState, action) => {
         post: {},
       };
     case ActionTypes.FETCH_POST:
-      return {
-        post: action.payload.data,
-      };
+      return Object.assign({}, state,
+        { post: action.payload.data },
+      );
     default:
-      return initialState;
+      return state;
   }
 };
 

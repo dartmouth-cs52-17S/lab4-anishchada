@@ -6,6 +6,7 @@
         "es6": true
     },
     "rules": {
+        "no-debugger": 0,
         "react/jsx-uses-react": 2,
         "react/jsx-uses-vars": 2,
         "react/react-in-jsx-scope": 2,
@@ -32,8 +33,7 @@
         "no-restricted-syntax": [
           0,
           "DebuggerStatement"
-        ],
-        "no-debugger": "warn"
+        ]
     },
     "plugins": [
         "react"
