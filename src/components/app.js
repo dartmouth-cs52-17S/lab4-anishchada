@@ -14,12 +14,10 @@ import '../style.scss';
 
 const Nav = (props) => {
   return (
-    <nav>
+    <nav className="bloghead">
       <ul>
-        <li><NavLink exact to="/">My Super Awesome Blog</NavLink></li>
-        <li><NavLink to="/posts/new">new post</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
+        <li><NavLink exact to="/" className="nav">My Super Awesome Blog</NavLink></li>
+        <li><NavLink to="/posts/new" className="nav">New Post</NavLink></li>
       </ul>
     </nav>
   );

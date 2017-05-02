@@ -20,14 +20,14 @@ class Posts extends Component {
   renderPosts() {
     console.log(this.props.PostsList);
     return this.props.PostsList.map((post) => {
-      return (<div><Link to={`/posts/${post.id}`}>{post.title}</Link></div>);
+      return (<div className="mainpost"><Link to={`/posts/${post.id}`} className="heading">{post.title}</Link></div>);
     });
   }
 
   render() {
     return (
       <div>
-        <div>{this.renderPosts()}</div>
+        <div className="mainpost2">{this.renderPosts()}</div>
       </div>
     );
   }

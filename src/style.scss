@@ -3,6 +3,45 @@ body {
   background: darken(white, 0.2);
 }
 
-.active {
-  color: pink;
+// .active {
+//   color: pink;
+// }
+
+.mainpost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: skyblue;
+  border: 5px solid red;
+  margin: 25px;
+  height: 150px;
+
+}
+
+.heading {
+  padding: 20px;
+  padding-top: 20px;
+  margin: 20px;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.mainpost2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 30px;
+  text-decoration: none;
+  color: navy;
+}
+
+.nav {
+  text-decoration: none;
 }

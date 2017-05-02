@@ -33,6 +33,8 @@ class Post extends Component {
 
   componentWillReceiveProps(newprops) {
     this.setState({ title: newprops.Post.title });
+    this.setState({ content: newprops.Post.content });
+    this.setState({ tags: newprops.Post.tags });
   }
 
   onChangeTitle(event) {
@@ -74,7 +76,7 @@ class Post extends Component {
             minRows={3}
             maxRows={6}
             maxLength="350"
-            // defaultValue={this.props.Post.title}
+            defaultValue={this.props.Post.title}
           />
 
           <Textarea className="textbox" onChange={this.onChangeContent}
