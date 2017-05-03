@@ -1,7 +1,8 @@
 body {
   font-family: "Roboto", sans-serif;
   background: darken(white, 0.2);
-  background-image: url('https://www.walldevil.com/wallpapers/a68/lake-reflection-mountain-background-web-landscapes-widewallpaper-nature.jpg');
+  //background-image: url('https://www.walldevil.com/wallpapers/a68/lake-reflection-mountain-background-web-landscapes-widewallpaper-nature.jpg');
+  background-color: navy;
   background-size: cover;
 }
 
@@ -9,7 +10,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: skyblue;
+  background-color: rgb(57, 171, 186);
   border: 5px solid rgb(36, 73, 0);
   margin: 25px;
   height: 250px;

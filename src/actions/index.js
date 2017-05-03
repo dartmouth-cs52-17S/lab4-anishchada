@@ -4,7 +4,7 @@ export const ActionTypes = {
   FETCH_POSTS: 'FETCH_POSTS',
   FETCH_POST: 'FETCH_POST',
   CREATE_POST: 'CREATE_POST',
-  // UPDATE_POST: 'UPDATE_POST',
+  UPDATE_POST: 'UPDATE_POST',
   // DELETE_POST: 'DELETE_POST',
 };
 
@@ -65,7 +65,7 @@ export function updatePost(id, post) {
     // can now dispatch stuff
     axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post).then((response) => {
       dispatch({
-        type: 'CREATE_POST',
+        type: 'UPDATE_POST',
         payload: response,
       });
       console.log(response);

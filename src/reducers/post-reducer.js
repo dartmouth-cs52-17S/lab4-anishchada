@@ -16,6 +16,10 @@ const PostReducer = (state = initialState, action) => {
       return Object.assign({}, state,
         { post: action.payload.data },
       );
+    case ActionTypes.UPDATE_POST:
+      return Object.assign({}, state,
+        { post: action.payload.data },
+      );
     default:
       return state;
   }
