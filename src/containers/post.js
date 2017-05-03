@@ -120,11 +120,9 @@ class Post extends Component {
       return (
         <div>
           <div className="body3">
-            <h1> ID: {this.props.match.params.postID}</h1>
-            <h1> Title: {this.props.Post.title} </h1>
-            <h2> Content: {this.props.Post.content} </h2>
-            <h2> Cover URL:</h2> <img src={this.props.Post.cover_url} alt="Nothing to display" />
-            <h2> Tags: {this.props.Post.tags} </h2>
+            <h1> {this.props.Post.title} </h1>
+            <img src={this.props.Post.cover_url} alt="Nothing to display" />
+            <div> {this.props.Post.tags} </div>
             <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.Post.content || '') }} />
           </div>
         </div>
@@ -144,7 +142,6 @@ class Post extends Component {
           <div>{this.renderSomeSection()}</div>
         </div>
       </div>
-
     );
   }
 }
