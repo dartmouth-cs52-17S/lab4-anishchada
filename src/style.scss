@@ -1,16 +1,45 @@
 body {
   font-family: "Roboto", sans-serif;
   background: darken(white, 0.2);
+  background-image: url('https://www.walldevil.com/wallpapers/a68/lake-reflection-mountain-background-web-landscapes-widewallpaper-nature.jpg');
+  background-size: cover;
 }
 
 .mainpost {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: skyblue;
-  border: 5px solid red;
+  border: 5px solid rgb(36, 73, 0);
   margin: 25px;
-  height: 150px;
+  height: 250px;
+}
+
+#cover {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+#tags {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  padding-right: 20px;
 }
 
 .heading {
@@ -19,6 +48,12 @@ body {
   margin: 20px;
   font-size: 30px;
   text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .mainpost2 {
@@ -39,6 +74,10 @@ nav ul {
 
 .nav {
   text-decoration: none;
+}
+
+.inputheaders {
+  color:white;
 }
 
 .textedit {
@@ -66,7 +105,7 @@ nav ul {
 /* Referenced https://www.w3schools.com/css/css_form.asp */
 
 .input {
-  border: 5px solid red;
+  border: 5px solid rgb(36, 73, 0);
   color: black;
   padding: 15px 32px;
   text-align: center;
@@ -101,7 +140,8 @@ nav ul {
 }
 
 .post {
-  border: 5px solid red;
+  border: 5px solid rgb(36, 73, 0);
+  color: white;
 }
 
 #material {

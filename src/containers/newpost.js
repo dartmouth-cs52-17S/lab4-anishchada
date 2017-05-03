@@ -60,7 +60,7 @@ class NewPost extends Component {
 
   render() {
     return (
-      <div>
+      <div className="inputheaders">
         <h3>Create Title</h3>
         <div><input onChange={this.onInputChange} value={this.state.title} className="input" type="text" required /></div>
         <h3>Create Content</h3>

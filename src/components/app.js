@@ -16,7 +16,7 @@ const Nav = (props) => {
   return (
     <nav className="bloghead">
       <ul>
-        <li><NavLink exact to="/" className="nav">My Super Awesome Blog</NavLink></li>
+        <li><NavLink exact to="/" className="nav">Anish Travel Blog</NavLink></li>
         <li><NavLink to="/posts/new" className="nav">New Post</NavLink></li>
       </ul>
     </nav>

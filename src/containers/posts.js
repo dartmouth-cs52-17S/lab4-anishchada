@@ -20,7 +20,14 @@ class Posts extends Component {
   renderPosts() {
     console.log(this.props.PostsList);
     return this.props.PostsList.map((post) => {
-      return (<div className="mainpost"><Link to={`/posts/${post.id}`} className="heading">{post.title}</Link></div>);
+      return (
+        <div className="mainpost">
+          <div id="text">
+            <Link to={`/posts/${post.id}`} className="heading">{post.title} </Link>
+            <div id="tags">{post.tags}</div>
+          </div>
+          <img src={post.cover_url} alt="Nothing to display" height="220" width="220" id="cover" />
+        </div>);
     });
   }
 
