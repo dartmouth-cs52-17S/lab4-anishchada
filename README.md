@@ -1,3 +1,12 @@
-The environment I set up was a one that utilized the Webpack build tool and the Node package manager. These tools help manage build modules that have numerous dependencies, and run JS outside of the browser. The environment uses Babel as a "transpiler" and Eslint as a code error parser to make sure the Javascript is error free and industry standard. I had a basic HTML and CSS file set up, and an organized directory with src and build subdirectories. The Node server was easy to run with the HTML/CSS/JS components.
+Anish Chadalavada  
+Computer Science 52  
+Lab Assignment 4 - Redux Blog Front End  
+May 3, 2017  
 
-I believe that with a little more practice, I will be much more comfortable with all the components of the Webpack build tool and the Node package manager/server and its applications. For now, I don't have any questions, but will continue to learn about Javascript and JQuery.
+EXTRA CREDIT -- for extra credit I implemented input validation for the creation of new blog posts, such that text had to be input for the title, tags, and content fields, and a valid URL had to be input for the cover URL field. 
+
+This lab utilized Redux to maintain state globally for the most part. We connected Redux with React in order to develop a blog application. We used the Axios API calls in order to update the server side based on updates, creations, and deletes on the front end. We used actions and reducers as well as a global state store in tandem with react components in order to complete a functioning blog component.
+
+Citations (contained inline as well):  
+I discussed this assignment at a high level with Alex and Dami  
+Thanks to Tim for all his help during office hours, as well as the TAs Irene and Robin for helping me a great deal to both develop and debug during TA hours.   

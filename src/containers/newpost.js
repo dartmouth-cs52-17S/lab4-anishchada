@@ -62,13 +62,13 @@ class NewPost extends Component {
     return (
       <div>
         <h3>Create Title</h3>
-        <div><input onChange={this.onInputChange} value={this.state.title} className="input" /></div>
+        <div><input onChange={this.onInputChange} value={this.state.title} className="input" type="text" required /></div>
         <h3>Create Content</h3>
-        <div><input onChange={this.onInputChange2} value={this.state.content} className="input" /></div>
+        <div><input onChange={this.onInputChange2} value={this.state.content} className="input" type="text" required /></div>
         <h3>Create Tags Using Hashtags</h3>
-        <div><input onChange={this.onInputChange3} value={this.state.tags} className="input" /></div>
+        <div><input onChange={this.onInputChange3} value={this.state.tags} className="input" type="text" required /></div>
         <h3>Create Cover URL using valid link</h3>
-        <div><input onChange={this.onInputChange4} value={this.state.cover_url} className="input" /></div>
+        <div><input onChange={this.onInputChange4} value={this.state.cover_url} className="input" type="url" required /></div>
         <button onClick={this.submitForm} className="button">Create</button>
       </div>
     );

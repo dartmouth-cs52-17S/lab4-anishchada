@@ -48,6 +48,7 @@ nav ul {
   width:700px;
 }
 
+/* Utilized code from my third and first lab for the button and input styling*/
 /* Button code taken from https://www.w3schools.com/css/css3_buttons.asp */
 
 .button {
@@ -76,6 +77,18 @@ nav ul {
   margin-top: 20px;
   margin-bottom: 20px;
   /*min-width: 200px;*/
+}
+
+/* Used code from the following references here in CSS and in the corresponding HTML for input validation
+ https://css-tricks.com/almanac/selectors/v/valid/
+ https://www.w3schools.com/tags/att_input_type.asp */
+
+.input:invalid {
+  background: hsla(0, 90%, 70%, 1);
+}
+
+.input:valid {
+  background: hsla(100, 90%, 70%, 1);
 }
 
 #icons {
