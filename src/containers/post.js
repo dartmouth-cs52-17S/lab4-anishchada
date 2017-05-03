@@ -68,8 +68,8 @@ class Post extends Component {
     if (this.state.isEditing) {
       console.log('i am editing now');
       return (
-        <div className="body1">
-          <div ><a href="" onClick={this.updateContent}><i className="fa fa-check fa-1x" /></a></div>
+        <div className="textedit">
+          <div ><a href="" onClick={this.updateContent}><i className="fa fa-check-square fa-3x" /></a></div>
 
           <Textarea className="textbox" onChange={this.onChangeTitle}
             style={{ boxSizing: 'border-box', minHeight: '200', minWidth: '200' }}
@@ -94,6 +94,8 @@ class Post extends Component {
             <h1> ID: {this.props.match.params.postID}</h1>
             <h1> Title: {this.props.Post.title} </h1>
             <h2> Content: {this.props.Post.content} </h2>
+            <h2> Cover URL:</h2> <img src={this.props.Post.cover_url} alt="Nothing to display" />
+            <h2> Tags: {this.props.Post.tags} </h2>
             <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.Post.content || '') }} />
           </div>
         </div>
@@ -104,10 +106,14 @@ class Post extends Component {
   render() {
     console.log(this.props.Post);
     return (
-      <div>
-        <div className="note-mover flex-item"><a href="" onClick={this.changeToggle}><i className="fa fa-arrows fa-3x" /></a></div>
-        <button onClick={this.delete} />
-        <div>{this.renderSomeSection()}</div>
+      <div className="post">
+        <div id="material">
+          <div id="icons">
+            <div className="flex-item"><a href="" onClick={this.changeToggle}><i className="fa fa-pencil-square fa-3x" /></a></div>
+            <button onClick={this.delete} id="deletebutton"> Delete </button>
+          </div>
+          <div>{this.renderSomeSection()}</div>
+        </div>
       </div>
 
     );
