@@ -15,6 +15,7 @@ class Post extends Component {
       title: this.props.Post.title,
       content: '',
       tags: '',
+      cover_url: '',
     };
 
     console.log('what');
@@ -24,6 +25,8 @@ class Post extends Component {
     this.renderSomeSection = this.renderSomeSection.bind(this);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeContent = this.onChangeContent.bind(this);
+    this.onChangeTags = this.onChangeTags.bind(this);
+    this.onChangeURL = this.onChangeURL.bind(this);
     this.updateContent = this.updateContent.bind(this);
   }
 
@@ -35,6 +38,7 @@ class Post extends Component {
     this.setState({ title: newprops.Post.title });
     this.setState({ content: newprops.Post.content });
     this.setState({ tags: newprops.Post.tags });
+    this.setState({ cover_url: newprops.Post.cover_url });
   }
 
   onChangeTitle(event) {
@@ -43,6 +47,14 @@ class Post extends Component {
 
   onChangeContent(event) {
     this.setState({ content: event.target.value });
+  }
+
+  onChangeTags(event) {
+    this.setState({ tags: event.target.value });
+  }
+
+  onChangeURL(event) {
+    this.setState({ cover_url: event.target.value });
   }
 
   delete() {
@@ -54,7 +66,7 @@ class Post extends Component {
     this.setState({ isEditing: !this.state.isEditing });
     console.log('updating post');
     console.log(this.state.title);
-    this.props.updatePost(this.props.match.params.postID, { title: this.state.title, content: this.state.content, tags: this.state.tags });
+    this.props.updatePost(this.props.match.params.postID, { title: this.state.title, content: this.state.content, tags: this.state.tags, cover_url: this.state.cover_url });
   }
 
   changeToggle(event) {
@@ -86,6 +98,23 @@ class Post extends Component {
             maxLength="350"
             defaultValue={this.props.Post.content}
           />
+
+          <Textarea className="textbox" onChange={this.onChangeTags}
+            style={{ boxSizing: 'border-box', minHeight: '200', minWidth: '200' }}
+            minRows={3}
+            maxRows={6}
+            maxLength="350"
+            defaultValue={this.props.Post.tags}
+          />
+
+          <Textarea className="textbox" onChange={this.onChangeURL}
+            style={{ boxSizing: 'border-box', minHeight: '200', minWidth: '200' }}
+            minRows={3}
+            maxRows={6}
+            maxLength="350"
+            defaultValue={this.props.Post.cover_url}
+          />
+
         </div>);
     } else {
       return (
@@ -110,7 +139,7 @@ class Post extends Component {
         <div id="material">
           <div id="icons">
             <div className="flex-item"><a href="" onClick={this.changeToggle}><i className="fa fa-pencil-square fa-3x" /></a></div>
-            <button onClick={this.delete} id="deletebutton"> Delete </button>
+            <button onClick={this.delete} className="button"> Delete </button>
           </div>
           <div>{this.renderSomeSection()}</div>
         </div>
