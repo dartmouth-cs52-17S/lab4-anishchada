@@ -3,7 +3,7 @@ Computer Science 52
 Lab Assignment 4 - Redux Blog Front End  
 May 3, 2017  
 
-EXTRA CREDIT -- for extra credit I implemented input validation for the creation of new blog posts, such that text had to be input for the title, tags, and content fields, and a valid URL had to be input for the cover URL field.
+EXTRA CREDIT -- for extra credit I implemented input validation for the creation of new blog posts, such that text had to be input for the title, tags, and content fields, and a valid URL had to be input for the cover URL field, otherwise the color of the input bar would remain red (valid info would cause it to change to green).
 
 This lab utilized Redux to maintain state globally for the most part. We connected Redux with React in order to develop a blog application. We used the Axios API calls in order to update the server side based on updates, creations, and deletes on the front end. We used actions and reducers as well as a global state store in tandem with react components in order to complete a functioning blog component.
 
@@ -25,4 +25,4 @@ Blog full show view (used react router to do posts/:postID and fetchpost for thi
 
 New post creator view (used createPost for this):  
 ![alt text](./pic3.jpg)  
-That one has input feedback as shown based on the coloring of the input bars although the button doesn't mute or anything without the info.
+That one has input feedback as shown based on the coloring of the input bars although the button doesn't mute or anything without the info. Up to user to follow the red/green input bar guidelines to make sure info is correct
