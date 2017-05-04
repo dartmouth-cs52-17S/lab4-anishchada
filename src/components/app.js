@@ -12,6 +12,8 @@ import '../style.scss';
 //   return <div><Counter /><Controls /></div>;
 // };
 
+// This code was provided for/adapted from the lab assignment as well as the previous redux and React Router short assignments
+
 const Nav = (props) => {
   return (
     <nav className="bloghead">

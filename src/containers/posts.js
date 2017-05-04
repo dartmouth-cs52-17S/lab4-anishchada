@@ -4,6 +4,8 @@ import { Link, withRouter } from 'react-router-dom';
 // import Post from '../containers/posts';
 import { fetchPosts, fetchPost } from '../actions';
 
+// I received help from Tim during office hours for this section of the lab; some of the code was refactored from Lab 3
+
 class Posts extends Component {
   constructor(props) {
     super(props);

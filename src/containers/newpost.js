@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { createPost } from '../actions';
 
+// Some of this code was also refactored from previous short assignments and Lab 3 Notes assignment
+
 class NewPost extends Component {
   constructor(props) {
     super(props);

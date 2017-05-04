@@ -5,6 +5,8 @@ const initialState = {
   post: {},
 };
 
+// This code was based on code from the Redux short assignment for the increment and decrement counter
+
 const PostReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.FETCH_POSTS:

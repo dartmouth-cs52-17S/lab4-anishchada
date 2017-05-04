@@ -8,6 +8,9 @@ export const ActionTypes = {
   // DELETE_POST: 'DELETE_POST',
 };
 
+// The framework for the code in each of these functions was provided in the assignment description
+// I received some help from Tim and Jon Gonzalez on this section of the assignment
+
 const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
 const API_KEY = '?key=anishchada';
 

@@ -9,6 +9,8 @@ import reducers from './reducers';
 
 import App from './components/app';
 
+// This code was based on what was given in the assignment
+
 // this creates the store with the reducers, and does some other stuff to initialize devtools
 const store = createStore(reducers, {}, compose(
   applyMiddleware(thunk),

@@ -7,6 +7,7 @@ import { updatePost, deletePost, fetchPost } from '../actions';
 
 // I used a fair amount of code from my own notes lab and refactored it for this component of lab 4
 // I also utilized some of the code that Tim provided for us from Lab 3 and Lab 4
+// I used the Textarea documentation for the editing boxes
 
 class Post extends Component {
   constructor(props) {
