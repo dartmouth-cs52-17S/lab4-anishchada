@@ -11,7 +11,9 @@ export const ActionTypes = {
 // The framework for the code in each of these functions was provided in the assignment description
 // I received some help from Tim and Jon Gonzalez on this section of the assignment
 
-const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+// const ROOT_URL = 'http://localhost:9090/api';
+const ROOT_URL = 'https://lab5-anish.herokuapp.com/api';
+// const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
 const API_KEY = '?key=anishchada';
 
 export function fetchPosts() {
