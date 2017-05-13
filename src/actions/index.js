@@ -5,6 +5,9 @@ export const ActionTypes = {
   FETCH_POST: 'FETCH_POST',
   CREATE_POST: 'CREATE_POST',
   UPDATE_POST: 'UPDATE_POST',
+  AUTH_USER: 'AUTH_USER',
+  DEAUTH_USER: 'DEAUTH_USER',
+  AUTH_ERROR: 'AUTH_ERROR',
   // DELETE_POST: 'DELETE_POST',
 };
 
@@ -45,7 +48,7 @@ export function createPost(post, history) {
     const fields = post;
     console.log(fields);
 
-    axios.post(`${ROOT_URL}/posts${API_KEY}`, fields).then((response) => {
+    axios.post(`${ROOT_URL}/posts${API_KEY}`, fields, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       console.log('here');
       console.log(response);
       history.push('/');
@@ -68,7 +71,7 @@ export function updatePost(id, post) {
     // here is where you would do your asynch axios calls
     // on the completion of which you would dispatch some new action!
     // can now dispatch stuff
-    axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post).then((response) => {
+    axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       dispatch({
         type: 'UPDATE_POST',
         payload: response,
@@ -105,11 +108,77 @@ export function deletePost(id, history) {  // ActionCreator returns a function
     // here is where you would do your asynch axios calls
     // on the completion of which you would dispatch some new action!
     // can now dispatch stuff
-    axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`).then((response) => {
+    axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       history.push('/');
       console.log(response);
     }).catch((error) => {
       console.log(error);
     });
   };
+}
+
+// deletes token from localstorage
+// and deauths
+export function signoutUser(history) {
+  return (dispatch) => {
+    localStorage.removeItem('token');
+    dispatch({ type: ActionTypes.DEAUTH_USER });
+    history.push('/');
+  };
+}
+
+// trigger to deauth if there is error
+// can also use in your error reducer if you have one to display an error message
+export function authError(error) {
+  return {
+    type: ActionTypes.AUTH_ERROR,
+    message: error,
+  };
+}
+
+export function signinUser({ email, password }, history) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/signin/`, { email, password }).then((response) => {
+      history.push('/');
+      dispatch({
+        type: ActionTypes.AUTH_USER,
+      });
+      localStorage.setItem('token', response.data.token);
+    }).catch((error) => {
+      console.log('in error');
+      dispatch(authError(`Sign In Failed: ${error.response.data}`));
+    });
+  };
+
+  // takes in an object with email and password (minimal user object)
+  // returns a thunk method that takes dispatch as an argument (just like our create post method really)
+  // does an axios.post on the /signin endpoint
+  // on success does:
+  //  dispatch({ type: ActionTypes.AUTH_USER });
+  //  localStorage.setItem('token', response.data.token);
+  // on error should dispatch(authError(`Sign In Failed: ${error.response.data}`));
+}
+
+
+export function signupUser({ email, password }, history) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/signup/`, { email, password }).then((response) => {
+      history.push('/');
+      dispatch({
+        type: ActionTypes.AUTH_USER,
+      });
+      localStorage.setItem('token', response.data.token);
+    }).catch((error) => {
+      console.log('in error');
+      dispatch(authError(`Sign In Failed: ${error.response.data}`));
+    });
+  };
+
+  // takes in an object with email and password (minimal user object)
+  // returns a thunk method that takes dispatch as an argument (just like our create post method really)
+  // does an axios.post on the /signup endpoint (only difference from above)
+  // on success does:
+  //  dispatch({ type: ActionTypes.AUTH_USER });
+  //  localStorage.setItem('token', response.data.token);
+  // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
 }

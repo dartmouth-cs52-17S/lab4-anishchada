@@ -3,6 +3,8 @@ import { Switch, BrowserRouter as Router, Route, NavLink } from 'react-router-do
 import Post from '../containers/post';
 import Posts from '../containers/posts';
 import NewPost from '../containers/newpost';
+import SignIn from '../containers/signin';
+import SignUp from '../containers/signup';
 import '../style.scss';
 
 // const About = (props) => {
@@ -12,7 +14,7 @@ import '../style.scss';
 //   return <div><Counter /><Controls /></div>;
 // };
 
-// This code was provided for/adapted from the lab assignment as well as the previous redux and React Router short assignments
+// This code was provided for/adapted from the lab assignment as well as the previous redux and React Router short assignmente
 
 const Nav = (props) => {
   return (
@@ -72,6 +74,8 @@ const App = (props) => {
           <Route exact path="/" component={Posts} />
           <Route path="/posts/new" component={NewPost} />
           <Route path="/posts/:postID" component={Post} />
+          <Route path="/posts/signup" component={SignUp} />
+          <Route path="/posts/signin" component={SignIn} />
           <Route render={() => (<div>post not found </div>)} />
         </Switch>
       </div>
