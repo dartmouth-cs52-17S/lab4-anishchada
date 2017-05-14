@@ -10,8 +10,9 @@ import '../style.scss';
 // const About = (props) => {
 //   return <div> All there is to know about me </div>;
 // };
+//
 // const Welcome = (props) => {
-//   return <div><Counter /><Controls /></div>;
+//   return <div><Nav /></div>;
 // };
 
 // This code was provided for/adapted from the lab assignment as well as the previous redux and React Router short assignmente
@@ -74,8 +75,8 @@ const App = (props) => {
           <Route exact path="/" component={Posts} />
           <Route path="/posts/new" component={NewPost} />
           <Route path="/posts/:postID" component={Post} />
-          <Route path="/posts/signup" component={SignUp} />
-          <Route path="/posts/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/signin" component={SignIn} />
           <Route render={() => (<div>post not found </div>)} />
         </Switch>
       </div>
