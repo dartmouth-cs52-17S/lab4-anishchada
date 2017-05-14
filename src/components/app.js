@@ -5,6 +5,8 @@ import Posts from '../containers/posts';
 import NewPost from '../containers/newpost';
 import SignIn from '../containers/signin';
 import SignUp from '../containers/signup';
+// import Nav from '../containers/nav';
+// import RequireAuth from '../containers/requireAuth';
 import '../style.scss';
 
 // const About = (props) => {

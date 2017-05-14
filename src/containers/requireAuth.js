@@ -16,10 +16,15 @@ export default function (ComposedComponent) {
     }
 
     componentWillMount() {
+      if (!this.props.authenticated) {
+        this.props.history.push('/signin');
+      }
     }
 
-    componentWillUpdate() {
-
+    componentWillUpdate(nextProps) {
+      if (!nextProps.authenticated) {
+        this.props.history.push('/signin');
+      }
     }
 
     render() {
