@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, BrowserRouter as NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { signoutUser } from '../actions';
+
 
 class Nav extends Component {
   constructor(props) {
@@ -9,15 +11,16 @@ class Nav extends Component {
     this.state = {
       newID: 3,
     };
+    this.delete = this.delete.bind(this);
   }
+
+  delete() {
+    this.props.signoutUser(this.props.history);
+  }
+
   render() {
     return (
-      <nav className="bloghead">
-        <ul>
-          <li><NavLink exact to="/" className="nav">Anish Travel Blog</NavLink></li>
-          <li><NavLink to="/posts/new" className="nav">New Post</NavLink></li>
-        </ul>
-      </nav>
+      <button onClick={this.delete} className="button"> Click to Sign out </button>
     );
   }
 }
@@ -38,4 +41,4 @@ const mapStateToProps = state => (
   }
 );
 
-export default withRouter(connect(mapStateToProps, null)(Nav));
+export default withRouter(connect(mapStateToProps, { signoutUser })(Nav));

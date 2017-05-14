@@ -5,7 +5,7 @@ import Posts from '../containers/posts';
 import NewPost from '../containers/newpost';
 import SignIn from '../containers/signin';
 import SignUp from '../containers/signup';
-// import Nav from '../containers/nav';
+import Nav2 from '../containers/nav2';
 // import RequireAuth from '../containers/requireAuth';
 import '../style.scss';
 
@@ -25,6 +25,7 @@ const Nav = (props) => {
       <ul>
         <li><NavLink exact to="/" className="nav">Anish Travel Blog</NavLink></li>
         <li><NavLink to="/posts/new" className="nav">New Post</NavLink></li>
+        <li><NavLink to="/signout" className="nav">Sign Out</NavLink></li>
       </ul>
     </nav>
   );
@@ -75,6 +76,7 @@ const App = (props) => {
         <Nav />
         <Switch>
           <Route exact path="/" component={Posts} />
+          <Route path="/signout" component={Nav2} />
           <Route path="/posts/new" component={NewPost} />
           <Route path="/posts/:postID" component={Post} />
           <Route path="/signup" component={SignUp} />

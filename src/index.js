@@ -25,6 +25,8 @@ if (token) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div>
+      <App />
+    </div>
   </Provider>
 , document.getElementById('main'));
