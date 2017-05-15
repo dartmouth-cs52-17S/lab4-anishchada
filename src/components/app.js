@@ -1,11 +1,12 @@
 import React from 'react';
-import { Switch, BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import Post from '../containers/post';
 import Posts from '../containers/posts';
 import NewPost from '../containers/newpost';
 import SignIn from '../containers/signin';
 import SignUp from '../containers/signup';
 import Nav2 from '../containers/nav2';
+import Nav from '../containers/nav';
 // import RequireAuth from '../containers/requireAuth';
 import '../style.scss';
 
@@ -19,17 +20,17 @@ import '../style.scss';
 
 // This code was provided for/adapted from the lab assignment as well as the previous redux and React Router short assignmente
 
-const Nav = (props) => {
-  return (
-    <nav className="bloghead">
-      <ul>
-        <li><NavLink exact to="/" className="nav">Anish Travel Blog</NavLink></li>
-        <li><NavLink to="/posts/new" className="nav">New Post</NavLink></li>
-        <li><NavLink to="/signout" className="nav">Sign Out</NavLink></li>
-      </ul>
-    </nav>
-  );
-};
+// const Nav = (props) => {
+//   return (
+//     <nav className="bloghead">
+//       <ul>
+//         <li><NavLink exact to="/" className="nav">Anish Travel Blog</NavLink></li>
+//         <li><NavLink to="/posts/new" className="nav">New Post</NavLink></li>
+//         <li><NavLink to="/signout" className="nav">Sign Out</NavLink></li>
+//       </ul>
+//     </nav>
+//   );
+// };
 
 // const Test = (props) => {
 //   return <div> ID: {props.match.params.id} </div>;
@@ -68,6 +69,8 @@ const Nav = (props) => {
 //   }
 // }
 
+// Took out <Route path="/signout" component={Nav2} />
+
 
 const App = (props) => {
   return (
@@ -76,11 +79,11 @@ const App = (props) => {
         <Nav />
         <Switch>
           <Route exact path="/" component={Posts} />
-          <Route path="/signout" component={Nav2} />
           <Route path="/posts/new" component={NewPost} />
           <Route path="/posts/:postID" component={Post} />
           <Route path="/signup" component={SignUp} />
           <Route path="/signin" component={SignIn} />
+          <Route path="/signout" component={Nav2} />
           <Route render={() => (<div>post not found </div>)} />
         </Switch>
       </div>

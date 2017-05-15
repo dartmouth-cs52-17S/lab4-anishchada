@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { signoutUser } from '../actions';
 
-
 class Nav extends Component {
   constructor(props) {
     super(props);
