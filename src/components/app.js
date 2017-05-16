@@ -7,7 +7,7 @@ import SignIn from '../containers/signin';
 import SignUp from '../containers/signup';
 import Nav2 from '../containers/nav2';
 import Nav from '../containers/nav';
-// import RequireAuth from '../containers/requireAuth';
+import requireAuth from '../containers/requireAuth';
 import '../style.scss';
 
 // const About = (props) => {
@@ -79,7 +79,7 @@ const App = (props) => {
         <Nav />
         <Switch>
           <Route exact path="/" component={Posts} />
-          <Route path="/posts/new" component={NewPost} />
+          <Route path="/posts/new" component={requireAuth(NewPost)} />
           <Route path="/posts/:postID" component={Post} />
           <Route path="/signup" component={SignUp} />
           <Route path="/signin" component={SignIn} />

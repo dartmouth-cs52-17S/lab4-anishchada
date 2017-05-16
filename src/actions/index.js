@@ -138,7 +138,7 @@ export function authError(error) {
 
 export function signinUser({ email, password }, history) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signin/`, { email, password }).then((response) => {
+    axios.post(`${ROOT_URL}/signin`, { email, password }).then((response) => {
       history.push('/');
       dispatch({
         type: ActionTypes.AUTH_USER,
@@ -162,7 +162,7 @@ export function signinUser({ email, password }, history) {
 
 export function signupUser({ email, password }, history) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup/`, { email, password }).then((response) => {
+    axios.post(`${ROOT_URL}/signup`, { email, password }).then((response) => {
       history.push('/');
       dispatch({
         type: ActionTypes.AUTH_USER,

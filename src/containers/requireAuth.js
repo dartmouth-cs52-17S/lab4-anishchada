@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // Some of this code was also refactored from previous short assignments and Lab 3 Notes assignment
 export default function (ComposedComponent) {
-  class RequireAuth extends Component {
+  class requireAuth extends Component {
     constructor(props) {
       super(props);
 
@@ -41,5 +41,5 @@ export default function (ComposedComponent) {
     }
   );
 
-  return connect(mapStateToProps, null)(RequireAuth);
+  return connect(mapStateToProps, null)(requireAuth);
 }

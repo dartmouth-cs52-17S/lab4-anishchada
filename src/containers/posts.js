@@ -28,7 +28,7 @@ class Posts extends Component {
             <Link to={`/posts/${post.id}`} className="heading">{post.title} </Link>
             <div id="tags">{post.tags}</div>
           </div>
-          <img src={post.cover_url} alt="Nothing to display" height="220" width="220" id="cover" />
+          <img src={post.cover_url} alt="Nothing to display" height="220" width="350" id="cover" />
         </div>);
     });
   }
