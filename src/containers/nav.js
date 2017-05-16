@@ -35,6 +35,7 @@ class Nav extends Component {
           <ul>
             <li><NavLink exact to="/" className="nav">Anish Travel Blog</NavLink></li>
             <li><NavLink to="/posts/new" className="nav">New Post</NavLink></li>
+            <li><NavLink to="/signup" className="nav">Sign Up</NavLink></li>
             <li><NavLink to="/signin" className="nav">Sign In</NavLink></li>
           </ul>
         </nav>

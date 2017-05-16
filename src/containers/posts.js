@@ -21,6 +21,8 @@ class Posts extends Component {
 
   renderPosts() {
     console.log(this.props.PostsList);
+    console.log('++++++++++++++++++');
+    console.log(this.props);
     return this.props.PostsList.map((post) => {
       return (
         <div className="mainpost">

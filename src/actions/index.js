@@ -160,9 +160,9 @@ export function signinUser({ email, password }, history) {
 }
 
 
-export function signupUser({ email, password }, history) {
+export function signupUser({ email, password, username }, history) {
   return (dispatch) => {
-    axios.post(`${ROOT_URL}/signup`, { email, password }).then((response) => {
+    axios.post(`${ROOT_URL}/signup`, { email, password, username }).then((response) => {
       history.push('/');
       dispatch({
         type: ActionTypes.AUTH_USER,

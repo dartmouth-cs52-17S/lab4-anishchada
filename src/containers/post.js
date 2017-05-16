@@ -120,12 +120,18 @@ class Post extends Component {
 
         </div>);
     } else {
+      console.log(this.props.Post.author);
+      let author = <div />;
+      if (this.props.Post.author) {
+        author = <div> {this.props.Post.author.username} </div>;
+      }
       return (
         <div>
           <div className="body3">
             <h1> {this.props.Post.title} </h1>
             <img src={this.props.Post.cover_url} alt="Nothing to display" />
             <div> {this.props.Post.tags} </div>
+            <div> Author {author} </div>
             <div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.Post.content || '') }} />
           </div>
         </div>
