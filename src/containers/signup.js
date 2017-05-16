@@ -54,7 +54,7 @@ class SignUp extends Component {
         <h3>Pick Email</h3>
         <div><input onChange={this.onInputChange} value={this.state.email} className="input" type="text" required /></div>
         <h3>Choose Secure Password</h3>
-        <div><input onChange={this.onInputChange2} value={this.state.password} className="input" type="text" required /></div>
+        <div><input onChange={this.onInputChange2} value={this.state.password} className="input" type="password" required /></div>
         <h3>Pick Username</h3>
         <div><input onChange={this.onInputChange3} value={this.state.username} className="input" type="text" required /></div>
         <button onClick={this.submitForm} className="button">Create Account</button>

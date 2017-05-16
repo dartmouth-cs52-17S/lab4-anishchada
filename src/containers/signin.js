@@ -45,7 +45,7 @@ class SignIn extends Component {
         <h3>Enter Email</h3>
         <div><input onChange={this.onInputChange} value={this.state.email} className="input" type="text" required /></div>
         <h3>Enter Password</h3>
-        <div><input onChange={this.onInputChange2} value={this.state.password} className="input" type="text" required /></div>
+        <div><input onChange={this.onInputChange2} value={this.state.password} className="input" type="password" required /></div>
         <button onClick={this.submitForm} className="button">Sign In</button>
       </div>
     );
